@@ -57,8 +57,8 @@ song_[id]  DEFB "Song name", 0
            DEFB "CcDdEFfGgAaB", 0
 </i></pre>
 
-Where Upper case letters represent soft  notes C,  D,  E,  F,  G,  A,  B <br />
-      Lower case letters represent sharp nodes C#, D#, F#, G#, A# <br />
+Upper case letters represent soft  notes C,  D,  E,  F,  G,  A,  B <br />
+Lower case letters represent sharp nodes C#, D#, F#, G#, A# <br />
 <br />
 The notes are defined on <b>Music.s</b> based on the following periods for octave 4.
 
@@ -77,4 +77,4 @@ _As EQU 4488  ;     / A#
 _B  EQU 4240  ; Ti  / B
 </i></pre>
 <br />
-Octaves can be changed based on the button click and will shift such values upwards or downwards.
+Octaves can be changed based on the right/left arrow click and will shift such values upwards/downwards.
