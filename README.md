@@ -1,8 +1,57 @@
 # MusicPlayer
 Jukebox program written in ARM assembly for an FPGA controller
 
-File <b>Playlist.s</b> contains the list of songs to be played.
-These are in the format:
+<pre><i>
+; Contains files:
+;        ♫ Main.s       overall definitions,
+;                       setup, user code, svc interface,
+;                       stack definitions
+;
+;        ♩ Music.s      music note definitions,
+;                       svc function to play a note,
+;                       library function to read a song               
+;                       and to terminate one
+;
+;        ♬ Playlist.s   contains an AWESOME collection
+;                       of songs. Want your own songs?
+;                       Edit this file =)
+;
+;        ♪ Interrupt.s  interrupt service routine, 
+;                       interrupt acknowledgement and
+;                       timer compare update
+;
+;        ♩ Keypad.s     keypad setup and functions
+;                       to poll the keypad or a specific row
+;        
+;        ♫ Display.s    svc functions to print a char,
+;                       clear the screen and library
+;                       function to print a string
+;
+;        ♬ Buttons.s    library functions to poll the
+;                       lower and upper buttons
+;
+;
+; Usage:
+;    ♫ The program starts with a blank screen and no songs
+;      being played.
+;
+;    ♪ As soon as a keypad key is pressed the corresponding
+;      song title is printed and the song starts playing.
+;
+;    ♬ Songs can be interrupted at any time by pressing a
+;      keypad key, which issues a new song to be played.
+;
+;    ♫ The octaves of notes in a song can be increased
+;      by pressing the upper button or decreased by
+;      pressing the lower button. These changes are
+;      discarted once a new song is issued.
+;
+;    ♩ If a song finishes playing, the screen will go
+;      blank, waiting for a new song to be chosen.
+; 
+</i></pre>
+
+Songs in the file <b>Playlist.s</b> are in the format
 <pre><i>
 song_[id]  DEFB "Song name", 0
            DEFB "CcDdEFfGgAaB", 0
